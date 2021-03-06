@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-@foreach($data as $item)
+@foreach($contact as $item)
     <div class="alert alert-info">
         <h3>{{ $item->subject }}</h3>
         <p>E-mail:{{ $item->email }}</p>
@@ -13,6 +13,6 @@
         <a href="{{route('ticket-detail', $item->id)}}"><button class="btn btn-warning">Details</button></a>
     </div>
 @endforeach
-
+{{ $contact->links() }}
 @endsection
 
