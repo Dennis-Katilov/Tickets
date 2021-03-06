@@ -23,8 +23,8 @@ class ContactController extends Controller
 
     protected function all()
     {
-        $contact = new Contact();
-        return view('all', ['data'=>$contact->orderBy('created_at')->get()]);
+        $contact = Contact::orderBy('created_at')->paginate(2);
+        return view('all', compact('contact'));
     }
 
     protected function detail($id)
